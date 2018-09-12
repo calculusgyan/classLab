@@ -22,7 +22,7 @@ int main(){
 }
 
 
-//Function Defintion
+//Function Definition
 int greatestDivisor(int number, int number1){
 	if(number1 != 0)
 		return greatestDivisor(number1, number % number1);
