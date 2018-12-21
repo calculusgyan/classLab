@@ -1,4 +1,13 @@
-#include "include_head.h"
+#include <iostream>
+#include <string>
+#include <windows.h>
+#include <iomanip>
+#include <time.h>
+#include <fstream>
+#include <cstdlib>
+#include <stdlib.h>
+
+using namespace std;
 
 /** Global variable */
 const int TOTAL = 100, TOTAL_ = 50, number1 = 5;
@@ -71,8 +80,8 @@ struct GPA{
 };
 
 /** Function prototype */
-void addStudent(/*ifstream& infile*/ studentData studentdata[], int length);
-void addStaff(/*ifstream& infile*/ staffData staffdata[], int length);
+void addStudent(studentData studentdata[], int length);
+void addStaff(staffData staffdata[], int length);
 void showStudent(studentData studentdata[], int length, int id);
 void showStaff(staffData staffdata[], int length, int id);
 void deleteStudent(studentData studentdata[], int length, int id);
@@ -338,7 +347,6 @@ int main(){
                }
 
                ch++;
-               //break;
             }
 
          break;
@@ -684,7 +692,7 @@ void assignedCourses(studentData studentdata[], int id, int length){
 
    i = 0, length = TOTAL;
    //sub1:
-   for(i = 0; i < length; i++){ // while( i < length)
+   for(i = 0; i < length; i++){
       while(studentdata[i].student_ID == id){
 
          switch(studentdata[i].year){
@@ -1130,7 +1138,6 @@ float TotalGradePoint(){
       break;
    }
 
-
    return gradepoint;
 }
 
@@ -1172,7 +1179,7 @@ void displayReport(studentData studentdata[], int id){
    while(i < TOTAL){
 
       if(studentdata[i].student_ID == id){
-         cout << fixed << showpoint << setprecision(1);
+         cout << fixed << showpoint << setprecision(2);
 
          cout << "\n\n\t\t Student ID: " << studentdata[i].student_ID << "\t Name: " << studentdata[i].lastname << ", " << studentdata[i].firstname << endl;
          cout << "\n\n -------------------------------------------------------------------------------------------------------------";
